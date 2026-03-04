@@ -73,39 +73,8 @@ An AI-powered movie analysis tool that fetches movie details from OMDB and uses 
 6. **Try it out**
    Enter an IMDb ID like `tt0133093` (The Matrix) and click "Analyze"
 
-## 🧪 Running Tests
 
-```bash
-npm test
-```
 
-Tests cover:
-- **API Route Tests**: Validation, successful responses, 404 errors, and network failure handling
-- **Component Tests**: SearchBar rendering, input validation, form submission, and loading states
-
-## 📁 Project Structure
-
-```
-src/
-├── app/
-│   ├── layout.js              # Root layout with SEO metadata
-│   ├── page.js                # Main page (state management + orchestration)
-│   ├── globals.css            # Design system + component styles
-│   └── api/
-│       ├── movie/route.js     # OMDB movie data endpoint
-│       ├── reviews/route.js   # IMDb review scraping endpoint
-│       └── sentiment/route.js # Gemini AI sentiment endpoint
-├── components/
-│   ├── SearchBar.jsx          # IMDb ID input with validation
-│   ├── MovieCard.jsx          # Movie poster + metadata display
-│   ├── SentimentPanel.jsx     # AI sentiment results + themes
-│   ├── ReviewList.jsx         # Scraped reviews display
-│   ├── Loader.jsx             # Multi-step progress indicator
-│   └── ErrorMessage.jsx       # Error display with retry
-__tests__/
-├── api/movie.test.js          # API route unit tests
-└── components/SearchBar.test.js # Component tests
-```
 
 ## 📝 Assumptions
 
@@ -115,23 +84,3 @@ __tests__/
 - When reviews cannot be scraped, the AI still provides analysis based on movie metadata and its knowledge base
 - The app uses Gemini's `gemini-2.0-flash` model for fast, cost-effective analysis
 
-## 🌐 Deployment
-
-### Deploy to Vercel (Recommended)
-
-1. Push your code to GitHub
-2. Go to [vercel.com](https://vercel.com) and import your repository
-3. Add environment variables in Vercel dashboard:
-   - `OMDB_API_KEY`
-   - `GEMINI_API_KEY`
-4. Click Deploy — Vercel auto-detects Next.js
-
-### Environment Variables on Vercel
-
-Go to **Project Settings → Environment Variables** and add:
-- `OMDB_API_KEY` = your OMDB key
-- `GEMINI_API_KEY` = your Gemini key
-
-## 📄 License
-
-This project is part of the Brew Full-Stack Developer Internship assignment.
